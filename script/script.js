@@ -1,34 +1,28 @@
-const gases = document.querySelectorAll('.benz-column img')
-
+const gases = document.querySelectorAll('.station')
 gases.forEach((gas) => {
     gas.addEventListener('click', () => {
-        if (gas.classList.contains('changeColor')) {
-            gas.classList.remove('changeColor')
+        if (gas.classList.contains('changeBg')) {
+            gas.classList.remove('changeBg')
         } else {
             gases.forEach((gas1) => {
-                gas1.classList.remove('changeColor')
+                gas1.classList.remove('changeBg')
             })
-            gas.classList.add('changeColor')
+            gas.classList.add('changeBg')
         }
     })
 })
-
 let totalLiters = document.querySelector("#amount");
-const vat = 5;
-
+const vat = 5
 const choosePetrol = (type) => {
     let petrolType = document.querySelector(`#${type}`)
     let priceForLiter = document.getElementById(type)
-
     if (type) {
-        document.getElementById('typePetrol').textContent = `Petrol type: ${type}`
-        document.getElementById('pricePetrol').textContent = `Price for one liter: ${petrolType.value}`
-        document.getElementById('totalPricePetrol').textContent = `Total price: ${calculated(priceForLiter.value, totalLiters.value).toFixed(2)} $`
-        document.getElementById('vatPetrol').textContent = `VAT: ${vat}% (${totalLiters.value * petrolType.value * (vat / 100)}  $)`
-        document.getElementById('litersPetrol').textContent = `Total liters: ${totalLiters.value}`
+        document.querySelector('#typePetrol').textContent = type
+        document.querySelector('#pricePetrol').textContent = `${petrolType.value}$`
+        document.querySelector('#totalPricePetrol').textContent = `${calculated(priceForLiter.value, totalLiters.value).toFixed(2)}$`
+        document.querySelector('#vatPetrol').textContent = `VAT: ${vat}% (${totalLiters.value * petrolType.value * (vat / 100)}  $)`
+        document.querySelector('#litersPetrol').textContent = `${totalLiters.value}L`
     }
-
-};
-
+}
 const calculated = (priceForLiter, totalLiter) => (priceForLiter * totalLiter) + ((vat / 100) * priceForLiter * totalLiter)
 
