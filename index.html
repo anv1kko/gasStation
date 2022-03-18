@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+<section class="header">
+    <div class="container">
+         <div class="auto-img"><img src="./images/auto.png" alt="car"></div>
+        <h3>PETROL BISHKEK</h3>
+    </div>
+</section>
+<section class="column" id="table">
+    <div class="container column-container">
+        <div class="benz-column"  >
+            <img src="./images/column.png" alt="column" onclick="choosePetrol('AI95')">
+            <div class="benz-name">
+                <h2>AI95:</h2>
+                <input type="text" placeholder="Price/1L" class="inputPlace" value="0.9" id="AI95" oninput="choosePetrol('AI95')">
+            </div>
+        </div>
+        <div class="benz-column"  >
+            <img src="./images/column.png" alt="column" class="inputPlace" onclick="choosePetrol('AI98')">
+            <div class="benz-name">
+                <h2>AI98:</h2>
+                <input type="text" placeholder="Price/1L" class="inputPlace" value="1.3" id="AI98" oninput="choosePetrol('AI98')">
+            </div>
+        </div>
+        <div class="benz-column" >
+            <img src="./images/column.png" alt="blueColumn" onclick="choosePetrol('AI100')">
+            <div class="benz-name">
+                <h2>AI100:</h2>
+                <input type="text" placeholder="1.3" class="inputPlace" value="1.5" id="AI100" oninput="choosePetrol('AI100')">
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="total-section">
+    <div class="container">
+        <div class="litres">
+            <label for="amount" class="count">Total liters:</label>
+            <input type="text" class="total-input" id="amount" oninput="choosePetrol()" value="50">
+        </div>
+
+        <div class="total">
+            <p class="count bill" id="billPetrol">Bill:</p>
+            <p class="count type" id="typePetrol">Petrol type: AI100</p>
+            <p class="count price" id="pricePetrol">Price for one liter:</p>
+            <p class="count liters" id="litersPetrol">Total liters: 13</p>
+            <p class="count vat" id="vatPetrol">VAT: 5%</p>
+            <h2 class="total-price" id="totalPricePetrol">Total price:</h2>
+        </div>
+    </div>
+</section>
+
+<script src="./script/script.js"></script>
+</body>
+</html>
